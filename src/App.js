@@ -1,13 +1,16 @@
 import React from "react";
-import NaverMap from "./NaverMap";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import NaverMap from "./NaverMap"; // NaverMap 컴포넌트를 import합니다.
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <h1>네이버 지도 예제</h1>
-            <NaverMap />
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/map" element={<NaverMap />} />
+                {/* 필요한 다른 라우트들도 여기에 추가할 수 있습니다. */}
+            </Routes>
+        </Router>
     );
-}
+};
 
 export default App;
